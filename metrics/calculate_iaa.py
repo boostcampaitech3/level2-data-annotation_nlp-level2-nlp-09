@@ -27,7 +27,7 @@ result['member5'] = [relations[label] for label in labels5]
 result = result.to_numpy()
 num_classes = int(np.max(result))
 
-# fleiss Kappa 계산
+# 평가자들이 relation별로 예측한 개수 
 transformed_result = []
 for i in range(len(result)):
     temp = np.zeros(num_classes)
@@ -35,4 +35,5 @@ for i in range(len(result)):
         temp[int(result[i][j]-1)] += 1
     transformed_result.append(temp.astype(int).tolist())
 
+# fleiss Kappa 계산
 kappa = fleissKappa(transformed_result,len(result[0]))
