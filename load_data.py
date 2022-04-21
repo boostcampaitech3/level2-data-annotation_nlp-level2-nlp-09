@@ -51,7 +51,7 @@ def load_data(dataset_dir, train=True, filter=False ,marking_mode="normal"):
   pd_dataset = pd.read_csv(dataset_dir)
   # train_test split
   if train:
-    pd_train, pd_eval = stratified_choice_train_test_split(pd_dataset, test_size=0.2) 
+    pd_train, pd_eval = stratified_choice_train_test_split(pd_dataset, test_size=0.1) 
     train_dataset = preprocessing_dataset(pd_train, filter, marking_mode)
     eval_dataset = preprocessing_dataset(pd_eval, filter, marking_mode)
     return train_dataset, eval_dataset
