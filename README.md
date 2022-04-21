@@ -3,8 +3,10 @@
 
 # Table of Contents
 1. [MnM Team Introduction](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#1-mnm-team-introduction)
-2. [Project Outline](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#2-project-outline)
-3. [Project Details](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#3-project-details)
+2. [Project Dataset](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#2-project-dataset)
+3. [Tagging using tagtog](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#3-tagging-using-tagtog)
+4. [Data Validation](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#4-data-validation)
+5. [license](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#5-license)
 ---
 ## 1. MnM Team Introduction
 
@@ -34,12 +36,14 @@ gimty97@gmail.com|fksl9959@naver.com |jaehahk810@naver.com|maxha97@naver.com |na
 
 ---
 
-## 2. Project Outline
-
-### Dataset Description
+## 2. Project Dataset
 > 이번 프로젝트에서는 직접 관계 추출 태스크 데이터셋을 만들고, 만든 데이터셋을 모델에 적용하여 검증하는 것이 목표이다.
-- @@@@@@@@@@@@@@@@@@@데이터 선정 이유@@@@@@@@@@@@@@@@@@@
-- @@@@@@@@@@@@@@@@@@@데이터 설명@@@@@@@@@@@@@@@@@@@
+
+### 데이터 설명
+2022 러시아의 침공으로 발발한 ‘러시아-우크라이나 전쟁’을 중심으로 러시아와 우크라이나의 역사와 외교적인 관계를 포괄한 데이터이다. 코퍼스의 개수는 총 35개의 텍스트(40개 중 5개는 데이터 누락) 약 2100문장이다. 데이터는 부스트캠프 측으로부터 **‘러시아-우크라이나 전쟁’** 주제에서 도출된 키워드들을 **위키피디아(CC BY-SA 3.0)** 문서 제목을 기반으로 수집해 제공받았다. 
+
+### 데이터 선정 이유
+해당 프로젝트를 진행하며 결과물로 나오는 tagged 데이터를 통해 인사이트를 얻을 수 있는 주제를 선정하고자 했다. 또한 ‘러시아-우크라이나 전쟁 데이터’가 정치적 관계, 국제 정세 등의 정보를 담는 지식 그래프 형성까지 확장될 수 있을 것이라고 생각해 선정했다.
 
 ### Relation Map
 <a href="https://colorful-bug-b35.notion.site/NLP-9-MnM-Wrap-up-report-6766623487014f66a5f80da2a710d98c"><img src="https://user-images.githubusercontent.com/46811558/164429000-15b142e6-8b12-47fc-80be-41123c61a9fc.jpg" width="50"/></a>
@@ -50,18 +54,40 @@ gimty97@gmail.com|fksl9959@naver.com |jaehahk810@naver.com|maxha97@naver.com |na
 **<<<Click Logo**
 
 ---
-## 3. Project Details
-
-### Tagging Using [TagTog](https://tagtog.net/)
+## 3. Tagging Using [tagtog](https://tagtog.net/)
 - @@@@@@@@@@@@@@@@@@@이부분@@@@@@@@@@@@@@@@@@@
 - @@@@@@@@@@@@@@@@@@@채워주시면@@@@@@@@@@@@@@@@@@@
 - @@@@@@@@@@@@@@@@@@@됩니다@@@@@@@@@@@@@@@@@@@
 
-### Data Validation
-- @@@@@@@@@@@@@@@@@@@Fleiss Kappa@@@@@@@@@@@@@@@@@@@
-- @@@@@@@@@@@@@@@@@@@Model Tunning@@@@@@@@@@@@@@@@@@@
-- @@@@@@@@@@@@@@@@@@@How to Use@@@@@@@@@@@@@@@@@@@
+## 4. Data Validation
+
+### Fleiss' Kappa
+[pilot tagging](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/tree/main/pilot_tagging)에서 ```calculate_iaa.py```파일을 사용해 Fleiss' Kappa를 계산한다.
 
 
+| file | # raters | # categories | # subjects | PA | PE | Fleiss' Kappa |
+| --- | --- | --- | --- | --- | --- | --- |
+|pilot_tagging1.xlsx | 5 | 10 | 100 | 0.7570 | 0.1546 | 0.713 | 
+|pilot_tagging2.xlsx | 5 | 10 | 100 | 0.8059 | 0.2243 | 0.75 |
 
 
+### Model Tuning
+1) ‘러시아-우크라이나 전쟁' 데이터셋에 맞게 새로 정의한 10개의 관계에 따라 ```make_pkl.py```파일을 사용해 pkl파일을 생성한다. 
+2) ```split_dataset.py```을 사용해 전체 1770개의 데이터를 9:1 비율로 클래스별 분포가 유지하며 train data와 test data로 나눈다. 
+이후 모델 학습에서 train data를 다시 9:1 비율로 나누어 각각 train, validation에 사용했다. 
+
+<img src="https://user-images.githubusercontent.com/33839093/164518462-268d2c07-51bd-41f1-83ae-f87438e9e190.png" width="700">
+
+3) roberta-large 모델, Focal loss를 사용해 학습을 진행했다. 자세한 파라미터는 [config](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/blob/main/config.json)를 참고한다. 
+
+| dataset | micro-f1 score | auprc |
+| --- | --- | --- |
+| valid | 87.097 | 89.213 | 
+| test | 88.152 | - |
+
+
+## 5. License
+
+```러시아-우크라이나 전쟁``` 데이터셋은 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.ko) 라이선스 하에 공개되어 있습니다.
+
+<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.ko"><img src="https://user-images.githubusercontent.com/33839093/164514617-269f0761-bebd-49f2-8eec-8691b98e5069.png" width="150"/></a>
