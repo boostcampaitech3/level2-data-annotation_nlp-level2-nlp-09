@@ -92,7 +92,7 @@ def save_dataframe(folder_name):
         return
     dict_for_df,untagged_ids, over_tagged= preprocess_texts(folder_name)
     df = pd.DataFrame(dict_for_df)
-    df.to_csv(f"../annotation_csvs/{folder_name}.csv", encoding="utf-8-sig")
+    df.to_csv(f"../annotation_csvs_split_by_person/{folder_name}.csv", encoding="utf-8-sig")
     with open(f"../untagged_texts/{folder_name}_untagged.txt","w",encoding="utf-8-sig") as f:
         f.write(str(untagged_ids))
     with open(f"../over_tagged_texts/{folder_name}_over_tagged.txt","w",encoding="utf-8-sig") as f:
