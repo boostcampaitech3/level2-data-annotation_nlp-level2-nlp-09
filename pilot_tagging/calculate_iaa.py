@@ -4,11 +4,11 @@ import numpy as np
 from fleiss import fleissKappa
 
 # 정의한 relation 정보 읽어오기
-with open("./relations.json", 'r', encoding="UTF-8") as j:
+with open("relations.json", 'r', encoding="UTF-8") as j:
      relations = json.loads(j.read())
 
-# file_dir = '../tagging_data/pilot_tagging.xlsx'  # 1차 파일럿 태깅
-file_dir = '../tagging_data/pilot_tagging2.xlsx'  # 2차 파일럿 태깅
+# file_dir = './pilot_data/pilot_tagging.xlsx'  # 1차 파일럿 태깅
+file_dir = './pilot_data/pilot_tagging2.xlsx'  # 2차 파일럿 태깅
 result = pd.read_excel(file_dir, sheet_name='Main', engine='openpyxl')  
 
 labels1 = list(result['찬국'])
