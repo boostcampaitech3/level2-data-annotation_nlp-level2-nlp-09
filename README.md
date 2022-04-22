@@ -78,7 +78,7 @@ gimty97@gmail.com|fksl9959@naver.com |jaehahk810@naver.com|maxha97@naver.com |na
 
 <img src="https://user-images.githubusercontent.com/33839093/164518462-268d2c07-51bd-41f1-83ae-f87438e9e190.png" width="700">
 
-3) roberta-large 모델, Focal loss를 사용해 학습을 진행했다. 자세한 파라미터는 [config](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/blob/main/config.json)에, 실험 결과는 [wanb](https://wandb.ai/hannayeoniee/Russia-Ukraine-War/runs/2xmrl3fh?workspace=user-hannayeoniee)에 나타나 있다. 
+3) roberta-large 모델, Focal loss를 사용해 학습을 진행했다. 자세한 파라미터는 [config](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/blob/main/config.json)에, 실험 결과는 [wandb](https://wandb.ai/hannayeoniee/Russia-Ukraine-War/runs/2xmrl3fh?workspace=user-hannayeoniee)에 나타나 있다. 
 
 | dataset | micro-f1 score | auprc |
 | --- | --- | --- |
