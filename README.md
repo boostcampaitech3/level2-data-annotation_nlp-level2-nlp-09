@@ -17,6 +17,7 @@
 
 ### 마스터 클래스 **섬세킹** 발표자료
 <a href="https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/blob/main/%EB%A7%88%EC%8A%A4%ED%84%B0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%84%AC%EC%84%B8%ED%82%B9_%EB%B0%9C%ED%91%9C.pdf"><img src="https://user-images.githubusercontent.com/33839093/164989270-3f01755b-a906-40c2-987e-b2ab2f776984.png" width="300"></a>
+**<<<Click Logo**
 
 
 ### Members
