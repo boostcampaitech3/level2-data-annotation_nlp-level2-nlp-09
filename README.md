@@ -1,4 +1,4 @@
-# RE Task 데이터제작('러시아-우크라이나 전쟁') - NLP 9조(MnM)
+# RE 데이터 제작(**러시아-우크라이나 전쟁**) - NLP 9조(MnM)
 > 네이버 부스트캠프 AI Tech 3기 P-Stage(Level 2) NLP 데이터제작을 위해 작성된 문서입니다. 해당 Competition에서는 실제 [위키피디아 원시 말뭉치](https://ko.wikipedia.org/wiki/%EB%9F%AC%EC%8B%9C%EC%95%84-%EC%9A%B0%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%82%98_%EC%A0%84%EC%9F%81)를 활용하여 직접 **RE Task**에 쓰이는 주석 코퍼스를 만들며, 한국어 및 다른 언어에서의 자연어처리 데이터셋의 유형 및 포맷이 어떠한지, 그리고 데이터셋을 구축하는 일반적인 프로세스가 무엇인지 학습합니다. 
 
 # Table of Contents
@@ -15,8 +15,9 @@
 <a href="https://colorful-bug-b35.notion.site/NLP-9-MnM-Wrap-up-report-6766623487014f66a5f80da2a710d98c"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" width="50"/></a>
 **<<<Click Logo**
 
-### Team Logo  
-![Team Logo](https://user-images.githubusercontent.com/46811558/162732068-7389c17e-afd5-48b0-a518-c37226416506.png)
+### 마스터 클래스 **섬세킹** 발표자료
+<a href="https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/blob/main/%EB%A7%88%EC%8A%A4%ED%84%B0%ED%81%B4%EB%9E%98%EC%8A%A4_%EC%84%AC%EC%84%B8%ED%82%B9_%EB%B0%9C%ED%91%9C.pdf"><img src="https://user-images.githubusercontent.com/33839093/164989270-3f01755b-a906-40c2-987e-b2ab2f776984.png" width="300"></a>
+
 
 ### Members
 김태일|문찬국|이재학|하성진|한나연|
@@ -40,10 +41,10 @@ gimty97@gmail.com|fksl9959@naver.com |jaehahk810@naver.com|maxha97@naver.com |na
 > 이번 프로젝트에서는 직접 관계 추출 태스크 데이터셋을 만들고, 만든 데이터셋을 모델에 적용하여 검증하는 것이 목표이다.
 
 ### 데이터 설명
-2022 러시아의 침공으로 발발한 ‘러시아-우크라이나 전쟁’을 중심으로 러시아와 우크라이나의 역사와 외교적인 관계를 포괄한 데이터이다. 코퍼스의 개수는 총 35개의 텍스트(40개 중 5개는 데이터 누락) 약 2100문장이다. 데이터는 부스트캠프 측으로부터 **‘러시아-우크라이나 전쟁’** 주제에서 도출된 키워드들을 **위키피디아(CC BY-SA 3.0)** 문서 제목을 기반으로 수집해 제공받았다. 
+2022 러시아의 침공으로 발발한 **러시아-우크라이나 전쟁**을 중심으로 러시아와 우크라이나의 역사와 외교적인 관계를 포함하는 데이터이다. 코퍼스의 개수는 총 35개의 텍스트(40개 중 5개는 데이터 누락) 약 2100문장이다. 데이터는 부스트캠프 측으로부터 **러시아-우크라이나 전쟁** 주제에서 도출된 키워드들을 **위키피디아(CC BY-SA 3.0)** 문서 제목을 기반으로 수집해 제공받았다. 
 
 ### 데이터 선정 이유
-해당 프로젝트를 진행하며 결과물로 나오는 tagged 데이터를 통해 인사이트를 얻을 수 있는 주제를 선정하고자 했다. 또한 ‘러시아-우크라이나 전쟁 데이터’가 정치적 관계, 국제 정세 등의 정보를 담는 지식 그래프 형성까지 확장될 수 있을 것이라고 생각해 선정했다.
+프로젝트의 결과물인 관계추출 데이터를 통해 인사이트를 얻을 수 있는 주제를 선정하고자 했다. 또한 러시아-우크라이나 전쟁 데이터로 정치적 관계, 국제 정세 등의 정보를 담는 지식 그래프로 확장될 수 있을 것이라고 생각하였다. 또한, 현 학습데이터 기반 관계추출 모델은 시시각각 업데이트되는 관련 주제에 대한 정보에서 관계추출을 통해 지식그래프를 확장하고 지속적으로 인사이트를 도출할 수 있을 것이라 생각했다.
 
 ### Relation Map
 <a href="https://docs.google.com/spreadsheets/d/1eMPZTpkVTwXyW-D1txj1NZyHt6ZOiw1R/edit#gid=535075484"><img src="https://user-images.githubusercontent.com/46811558/164429000-15b142e6-8b12-47fc-80be-41123c61a9fc.jpg" width="50"/></a>
