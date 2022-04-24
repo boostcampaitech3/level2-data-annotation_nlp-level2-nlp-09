@@ -70,7 +70,6 @@ python data_to_csv.py
 cd tagtog_data_handler
 python merge_csvs.py
 ```
-- 
 ## 4. Data Validation
 
 ### Fleiss' Kappa
