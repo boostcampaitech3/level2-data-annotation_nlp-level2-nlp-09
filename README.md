@@ -55,10 +55,22 @@ gimty97@gmail.com|fksl9959@naver.com |jaehahk810@naver.com|maxha97@naver.com |na
 
 ---
 ## 3. Tagging Using [tagtog](https://tagtog.net/)
-- @@@@@@@@@@@@@@@@@@@이부분@@@@@@@@@@@@@@@@@@@
-- @@@@@@@@@@@@@@@@@@@채워주시면@@@@@@@@@@@@@@@@@@@
-- @@@@@@@@@@@@@@@@@@@됩니다@@@@@@@@@@@@@@@@@@@
-
+- data upload: sample_txts의 텍스트 파일들의 텍스트를 한줄씩 tagtog에 업로드
+```
+cd tagtog_data_handler
+python data_upload.py
+```
+- data to csv: tagtog에서 다운로드한 annotation data를 각 폴더별로 csv로 변환
+```
+cd tagtog_data_handler
+python data_to_csv.py
+```
+- merge csvs: 폴더 별 csv 파일들을 하나로 합쳐서 파일럿 태깅 데이터 셋과 전체 데이터 셋 반환
+```
+cd tagtog_data_handler
+python merge_csvs.py
+```
+- 
 ## 4. Data Validation
 
 ### Fleiss' Kappa
