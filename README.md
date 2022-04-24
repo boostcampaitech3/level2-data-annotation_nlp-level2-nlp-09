@@ -2,17 +2,17 @@
 > 네이버 부스트캠프 AI Tech 3기 P-Stage(Level 2) NLP 데이터제작을 위해 작성된 문서입니다. 해당 Competition에서는 실제 [위키피디아 원시 말뭉치](https://ko.wikipedia.org/wiki/%EB%9F%AC%EC%8B%9C%EC%95%84-%EC%9A%B0%ED%81%AC%EB%9D%BC%EC%9D%B4%EB%82%98_%EC%A0%84%EC%9F%81)를 활용하여 직접 **RE Task**에 쓰이는 주석 코퍼스를 만들며, 한국어 및 다른 언어에서의 자연어처리 데이터셋의 유형 및 포맷이 어떠한지, 그리고 데이터셋을 구축하는 일반적인 프로세스가 무엇인지 학습합니다. 
 
 # Table of Contents
-1. [MnM Team Introduction](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#1-mnm-team-introduction)
-2. [Project Dataset](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#2-project-dataset)
-3. [Tagging using tagtog](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#3-tagging-using-tagtog)
-4. [Data Validation](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#4-data-validation)
-5. [License](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09/edit/main/README.md#5-license)
+1. [MnM Team Introduction](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09#1-mnm-team-introduction)
+2. [Project Dataset](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09#2-project-dataset)
+3. [Tagging using tagtog](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09#3-tagging-using-tagtog)
+4. [Data Validation](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09#4-data-validation)
+5. [License](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-09#5-license)
 ---
 ## 1. MnM Team Introduction
 
 ### Wrap-up Report 
 
-<a href="https://colorful-bug-b35.notion.site/NLP-9-MnM-Wrap-up-report-6d20d7353b7a4e11befe2096c8246f9e"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" width="50"/></a>
+<a href="https://colorful-bug-b35.notion.site/NLP-9-MnM-Wrap-up-report-6766623487014f66a5f80da2a710d98c"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" width="50"/></a>
 **<<<Click Logo**
 
 ### Team Logo  
@@ -46,11 +46,11 @@ gimty97@gmail.com|fksl9959@naver.com |jaehahk810@naver.com|maxha97@naver.com |na
 해당 프로젝트를 진행하며 결과물로 나오는 tagged 데이터를 통해 인사이트를 얻을 수 있는 주제를 선정하고자 했다. 또한 ‘러시아-우크라이나 전쟁 데이터’가 정치적 관계, 국제 정세 등의 정보를 담는 지식 그래프 형성까지 확장될 수 있을 것이라고 생각해 선정했다.
 
 ### Relation Map
-<a href="https://colorful-bug-b35.notion.site/NLP-9-MnM-Wrap-up-report-6766623487014f66a5f80da2a710d98c"><img src="https://user-images.githubusercontent.com/46811558/164429000-15b142e6-8b12-47fc-80be-41123c61a9fc.jpg" width="50"/></a>
+<a href="https://docs.google.com/spreadsheets/d/1eMPZTpkVTwXyW-D1txj1NZyHt6ZOiw1R/edit#gid=535075484"><img src="https://user-images.githubusercontent.com/46811558/164429000-15b142e6-8b12-47fc-80be-41123c61a9fc.jpg" width="50"/></a>
 **<<<Click Logo**
 
 ### Guideline
-<a href="https://colorful-bug-b35.notion.site/NLP-9-MnM-Wrap-up-report-6766623487014f66a5f80da2a710d98c"><img src="https://user-images.githubusercontent.com/46811558/164429203-a3dfb8f8-0d8d-4889-8ddf-a8abaee08a69.png" width="50"/></a>
+<a href="https://docs.google.com/document/d/1XhR36u-DZoZcP9yVYDDPwrb_AUrtPIc0/edit"><img src="https://user-images.githubusercontent.com/46811558/164429203-a3dfb8f8-0d8d-4889-8ddf-a8abaee08a69.png" width="50"/></a>
 **<<<Click Logo**
 
 ---
@@ -70,6 +70,8 @@ python data_to_csv.py
 cd tagtog_data_handler
 python merge_csvs.py
 ```
+---
+
 ## 4. Data Validation
 
 ### Fleiss' Kappa
@@ -96,6 +98,7 @@ python merge_csvs.py
 | valid | 87.097 | 89.213 | 
 | test | 88.152 | - |
 
+---
 
 ## 5. License
 
